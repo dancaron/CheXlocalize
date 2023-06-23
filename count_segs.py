@@ -3,14 +3,13 @@ import json
 import numpy as np
 import pandas as pd
 from pycocotools import mask
-
 from eval_constants import LOCALIZATION_TASKS
 
-def main(args):
+def count_segs(seg_path, save_dir):
     """
     For each pathology, count the number of CXRs with at least one segmentation.
     """
-    with open(args.seg_path) as f:
+    with open(seg_path) as f:
         seg_dict = json.load(f)
 
     cxr_ids = sorted(seg_dict.keys())
@@ -31,7 +30,7 @@ def main(args):
     df = pd.DataFrame.from_dict(segmentation_label)
     n_cxr_per_pathology = df.sum()
     print(n_cxr_per_pathology)
-    n_cxr_per_pathology.to_csv(f'{args.save_dir}/n_segs.csv')
+    n_cxr_per_pathology.to_csv(f'{save_dir}/n_segs.csv')
 
 if __name__ == "__main__":
     parser = ArgumentParser()
@@ -41,4 +40,4 @@ if __name__ == "__main__":
     parser.add_argument('--save_dir', default='.',
                         help='where to save results')
     args = parser.parse_args()
-    main(args)
+    count_segs(args.seg_path, args.save_dir)
