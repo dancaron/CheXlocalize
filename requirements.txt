@@ -6,7 +6,7 @@ cycler
 fonttools
 json
 kiwisolver
-matplotlib$
+matplotlib
 opencv-python
 os
 packaging
