@@ -10,9 +10,9 @@ import os
 from pycocotools import mask
 import sys
 
-#sys.path.append(os.path.join(os.path.dirname(__file__), "CheXlocalize"))
+sys.path.append(os.path.join(os.path.dirname(__file__), "CheXlocalize"))
 
-from CheXlocalize.count_segs import count_segs
+from count_segs import count_segs
 
 st.markdown("## Exploratory Data Analysis")
 st.divider()
