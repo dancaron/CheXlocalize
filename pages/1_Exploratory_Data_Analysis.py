@@ -10,7 +10,7 @@ import os
 from pycocotools import mask
 import sys
 
-sys.path.append(os.path.join(os.path.dirname(__file__), "CheXlocalize"))
+sys.path.append(os.path.join(os.path.dirname(__file__), "CheXlocalize-master"))
 
 from count_segs import count_segs
 
