@@ -12,7 +12,7 @@ import sys
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "CheXlocalize"))
 
-from count_segs import count_segs
+from CheXlocalize.count_segs import count_segs
 
 st.markdown("## Exploratory Data Analysis")
 st.divider()
